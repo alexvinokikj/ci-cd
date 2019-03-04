@@ -1,0 +1,44 @@
+
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+        lombok_version='1.18.4'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id "java"
+    id "application"
+    id "eclipse"
+    id "org.springframework.boot" version "2.1.0.RELEASE"
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+    id "com.github.sherter.google-java-format" version "0.7.1"
+    id "com.github.ManifestClasspath" version "0.1.0-RELEASE"
+    id 'net.ltgt.apt' version '0.19'
+    id "com.github.ben-manes.versions" version "0.20.0"
+}
+mainClassName = 'com.alex.ServiceApplication'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile( 'org.springframework.boot:spring-boot-starter-web')
+    compile( 'org.springframework.boot:spring-boot-starter-data-rest')
+    compile( 'io.springfox:springfox-swagger-ui:2.6.1')
+    compile( 'io.springfox:springfox-swagger2:2.6.1')
+    testCompile( 'org.springframework.boot:spring-boot-starter-test:')
+    compile("org.projectlombok:lombok:${lombok_version}")
+    apt ("org.projectlombok:lombok:${lombok_version}")
+}
