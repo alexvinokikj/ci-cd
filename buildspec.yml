@@ -14,9 +14,9 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo ReTaging/Pushing the Docker images...
-      - docker tag alex-codepiplinetest:latest 690264925639.dkr.ecr.us-east-2.amazonaws.com/alex-codepiplinetest:latest
+      - docker tag alex-codepiplinetest:latest 690264925639.dkr.ecr.us-east-1.amazonaws.com/alex-codepiplinetest:latest
       - echo Pushing the Docker image...
-      - docker push 690264925639.dkr.ecr.us-east-2.amazonaws.com/alex-codepiplinetest:latest
+      - docker push 690264925639.dkr.ecr.us-east-1.amazonaws.com/alex-codepiplinetest:latest
       - echo Restarting ECS service...
       - aws ecs describe-clusters
       - aws ecs update-service --force-new-deployment --cluster code-pipeline-cluster --service code-pipeline-service
