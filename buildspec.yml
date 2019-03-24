@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -f "ci-cd/Dockerfile" -t alex-codepiplinetest .
+      - docker build -t alex-codepiplinetest .
   post_build:
     commands:
       - echo Build completed on `date`
